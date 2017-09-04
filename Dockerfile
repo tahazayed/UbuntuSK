@@ -7,7 +7,7 @@ COPY files/SKDownloader /home/pi/github/SKDownloader
 
 RUN sed -i "s/# deb-src/deb-src/g" /etc/apt/sources.list \
 && apt-get update && apt-get install -y --no-install-recommends \
-                apt-utils build-essential ca-certificates findutils gnupg dirmngr inetutils-ping \
+                build-essential ca-certificates findutils gnupg dirmngr inetutils-ping \
 		iproute netbase curl gcc g++ libcurl4-openssl-dev dh-make devscripts build-essential \
                 fakeroot libspdlog-dev git nano quilt dh-systemd \
 && apt-get -y autoremove \
