@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SKDownloader" />
+		<Option platforms="Unix;" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option platforms="Unix;" />
+				<Option output="bin/Debug/SKDownloader" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option platforms="Unix;" />
+				<Option output="bin/Release/SKDownloader" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="include" />
+				</Compiler>
+				<ExtraCommands>
+					<Add before="rm -rf obj/" />
+					<Add before="rm -rf bin/" />
+					<Add before="python3 autoversion.py include/version.h MYDEF_PRODUCTVERSION" />
+					<Add after=". ./postbuild.sh" />
+				</ExtraCommands>
+			</Target>
+			<Environment>
+				<Variable name="DAEMON_CONF_DIR" value="/home/pi/SKDownloader" />
+				<Variable name="PACKAGE_DIR" value="./build/SKDowloader/" />
+				<Variable name="SYSTEMD_UNIT_DIR" value="/etc/systemd/system/" />
+			</Environment>
+		</Build>
+		<Compiler>
+			<Add option="-O3" />
+			<Add option="-w" />
+			<Add option="-std=c++14" />
+			<Add option="-lrt" />
+			<Add option="-lcurl" />
+			<Add directory="/usr/include/curl" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add library="curl" />
+			<Add library="rt" />
+			<Add library="m" />
+			<Add library="pthread" />
+		</Linker>
+		<Unit filename="GenerateMakeFile.sh" />
+		<Unit filename="LICENSE" />
+		<Unit filename="Makefile" />
+		<Unit filename="README.md" />
+		<Unit filename="SKDownloader.conf" />
+		<Unit filename="SKDownloader.depend" />
+		<Unit filename="SKDownloader.init" />
+		<Unit filename="SKDownloader.service" />
+		<Unit filename="autoversion.py" />
+		<Unit filename="build.sh" />
+		<Unit filename="cbp2make.linux-x86_64" />
+		<Unit filename="debian/README.Debian" />
+		<Unit filename="debian/README.source" />
+		<Unit filename="debian/changelog" />
+		<Unit filename="debian/compat" />
+		<Unit filename="debian/control" />
+		<Unit filename="debian/copyright" />
+		<Unit filename="debian/install" />
+		<Unit filename="debian/manpage.1.ex" />
+		<Unit filename="debian/manpage.sgml.ex" />
+		<Unit filename="debian/manpage.xml.ex" />
+		<Unit filename="debian/menu.ex" />
+		<Unit filename="debian/postinst.ex" />
+		<Unit filename="debian/postrm.ex" />
+		<Unit filename="debian/preinst.ex" />
+		<Unit filename="debian/prerm.ex" />
+		<Unit filename="debian/rules" />
+		<Unit filename="debian/source/format" />
+		<Unit filename="debian/watch.ex" />
+		<Unit filename="include/HttpFileDownloader.hpp" />
+		<Unit filename="include/Util.hpp" />
+		<Unit filename="include/VideoClient.hpp" />
+		<Unit filename="include/json.hpp" />
+		<Unit filename="include/spdlog/async_logger.h" />
+		<Unit filename="include/spdlog/common.h" />
+		<Unit filename="include/spdlog/details/async_log_helper.h" />
+		<Unit filename="include/spdlog/details/async_logger_impl.h" />
+		<Unit filename="include/spdlog/details/file_helper.h" />
+		<Unit filename="include/spdlog/details/log_msg.h" />
+		<Unit filename="include/spdlog/details/logger_impl.h" />
+		<Unit filename="include/spdlog/details/mpmc_bounded_q.h" />
+		<Unit filename="include/spdlog/details/null_mutex.h" />
+		<Unit filename="include/spdlog/details/os.h" />
+		<Unit filename="include/spdlog/details/pattern_formatter_impl.h" />
+		<Unit filename="include/spdlog/details/registry.h" />
+		<Unit filename="include/spdlog/details/spdlog_impl.h" />
+		<Unit filename="include/spdlog/fmt/bundled/format.cc" />
+		<Unit filename="include/spdlog/fmt/bundled/format.h" />
+		<Unit filename="include/spdlog/fmt/bundled/ostream.cc" />
+		<Unit filename="include/spdlog/fmt/bundled/ostream.h" />
+		<Unit filename="include/spdlog/fmt/bundled/posix.cc" />
+		<Unit filename="include/spdlog/fmt/bundled/posix.h" />
+		<Unit filename="include/spdlog/fmt/bundled/time.h" />
+		<Unit filename="include/spdlog/fmt/fmt.h" />
+		<Unit filename="include/spdlog/fmt/ostr.h" />
+		<Unit filename="include/spdlog/formatter.h" />
+		<Unit filename="include/spdlog/logger.h" />
+		<Unit filename="include/spdlog/sinks/android_sink.h" />
+		<Unit filename="include/spdlog/sinks/ansicolor_sink.h" />
+		<Unit filename="include/spdlog/sinks/base_sink.h" />
+		<Unit filename="include/spdlog/sinks/dist_sink.h" />
+		<Unit filename="include/spdlog/sinks/file_sinks.h" />
+		<Unit filename="include/spdlog/sinks/msvc_sink.h" />
+		<Unit filename="include/spdlog/sinks/null_sink.h" />
+		<Unit filename="include/spdlog/sinks/ostream_sink.h" />
+		<Unit filename="include/spdlog/sinks/sink.h" />
+		<Unit filename="include/spdlog/sinks/stdout_sinks.h" />
+		<Unit filename="include/spdlog/sinks/syslog_sink.h" />
+		<Unit filename="include/spdlog/sinks/wincolor_sink.h" />
+		<Unit filename="include/spdlog/spdlog.h" />
+		<Unit filename="include/spdlog/tweakme.h" />
+		<Unit filename="include/version.h" />
+		<Unit filename="make_package.sh" />
+		<Unit filename="postbuild.sh" />
+		<Unit filename="skdownloader_1.0.0.orig.tar.xz" />
+		<Unit filename="skdownloader_1.0.0_all.orig.tar.xz" />
+		<Unit filename="src/HttpFileDownloader.cpp" />
+		<Unit filename="src/SKDownloader.cpp" />
+		<Unit filename="src/Util.cpp" />
+		<Unit filename="src/VideoClient.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" use_define="0" update_manifest="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="" />
+			</AutoVersioning>
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

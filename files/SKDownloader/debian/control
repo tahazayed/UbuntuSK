@@ -1,0 +1,16 @@
+Source: skdownloader
+Section: main
+Priority: Standard
+Maintainer: Taha Amin <tahazayed@gmail.com>
+Build-Depends: debhelper (>= 9),dh-systemd,libcurl3,libspdlog-dev,libcurl4-openssl-dev
+Standards-Version: 3.9.8
+Homepage: http://www.screenkisok.com/
+#Vcs-Git: https://anonscm.debian.org/collab-maint/skdownloader.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/skdownloader.git
+
+Package: skdownloader
+Architecture: all
+Depends: ${misc:Depends}
+Pre-Depends: libcurl3,libspdlog-dev,libcurl4-openssl-dev
+Description: Hello this  a daemon service to download media for Screen Kiosk.
+             Copyright 2017 Taha Amin.

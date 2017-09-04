@@ -1,0 +1,8 @@
+SKDownloader.service /etc/systemd/system/
+emptyfile.log /home/pi/SKMedia/videos/
+SKDownloader.log /var/log/
+SKDownloader.pid /var/run/
+SKDownloader /home/pi/SKDownloader/
+SKDownloader.conf /home/pi/SKDownloader/
+log.txt /home/pi/SKDownloader/logs/
+

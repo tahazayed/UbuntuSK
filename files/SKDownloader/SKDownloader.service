@@ -1,0 +1,17 @@
+[Unit]
+Description=Screen Kiosk Downloader Daemon
+Wants=network.target statd.service
+After=network.target statd.service
+
+[Service]
+Type=forking
+PIDFile=/var/run/SKDownloader.pid
+ExecStart=/home/pi/SKDownloader/SKDownloader \
+	--conf_file /home/pi/SKDownloader/SKDownloader.conf \
+	--log_file /var/log/SKDownloader.log \
+	--pid_file /var/run/SKDownloader.pid \
+	--daemon
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

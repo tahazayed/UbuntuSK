@@ -1,0 +1,16 @@
+#remove stopped containers 
+docker rm $(docker ps -qa --no-trunc --filter "status=exited")
+
+
+https://hub.docker.com/r/solita/ubuntu-systemd/
+https://github.com/jwilder/docker-squash
+
+docker build -t tahazayed/ubuntusk:latest . --compress --force-rm --rm
+
+
+docker run --rm --privileged -v /:/host tahazayed/ubuntusk:latest setup
+
+docker push  tahazayed/ubuntusk:latest 
+
+docker run -d --name systemd01 --security-opt seccomp=unconfined --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -it  tahazayed/ubuntusk:latest 
+
