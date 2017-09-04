@@ -28,6 +28,8 @@ WORKDIR "/home/pi/github/SKDownloader/build" \
                 devscripts \
                 build-essential \
                 --allow-remove-essential \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
 
