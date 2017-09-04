@@ -2,6 +2,7 @@
 
 . ./stopall.sh
 
+docker run --rm --privileged -v /:/host tahazayed/ubuntusk:latest setup
 
 for i in {1..500}
 do
