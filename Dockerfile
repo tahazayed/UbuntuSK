@@ -15,11 +15,11 @@ RUN sed -i "s/# deb-src/deb-src/g" /etc/apt/sources.list \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-WORKDIR "/home/pi/github/SKDownloader" \
-&& . ./build.sh 
-WORKDIR "/home/pi/github/SKDownloader/build" \
-&& dpkg -i skdownloader_*_all.deb \
-&& rm -rf /home/pi/github \
+WORKDIR "/home/pi/github/SKDownloader" 
+RUN . ./build.sh 
+WORKDIR "/home/pi/github/SKDownloader/build" 
+RUN dpkg -i skdownloader_*_all.deb 
+RUN rm -rf /home/pi/github \
 && chmod +777 -R /home/pi \
 && chown pi:pi -R /home/pi \
 && apt-get remove -y dh-make \
