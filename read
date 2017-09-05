@@ -5,7 +5,7 @@ docker rm $(docker ps -qa --no-trunc --filter "status=exited")
 https://hub.docker.com/r/solita/ubuntu-systemd/
 https://github.com/jwilder/docker-squash
 
-docker build -t tahazayed/ubuntusk:latest . --compress --force-rm --rm
+docker build -t tahazayed/ubuntusk:latest . --compress --force-rm --rm --no-cache
 
 
 docker run --rm --privileged -v /:/host tahazayed/ubuntusk:latest setup

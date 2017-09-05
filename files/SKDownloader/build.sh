@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo make release
-sudo chown -R pi:pi build
+make release
+chown -R pi:pi build
