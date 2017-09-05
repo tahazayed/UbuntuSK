@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in {1..500}
+for i in {1..50}
 do
    docker stop systemd$i
    docker rm systemd$i

@@ -1,4 +1,4 @@
-FROM solita/ubuntu-systemd:latest
+FROM solita/ubuntu-systemd-ssh:latest
 
 
 
